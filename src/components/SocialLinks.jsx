@@ -94,7 +94,7 @@ function SocialLinks() {
       </IconButton>
 
       <IconButton 
-        href="https://www.instagram.com/yuviibains_/" 
+        href="https://www.instagram.com/yuvraj.bainss/" 
         target="_blank" 
         sx={{ 
           color: sectionColors[activeSection],
