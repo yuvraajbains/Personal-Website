@@ -16,11 +16,10 @@ function Navbar() {
   };
 
   const navItems = [
-    { label: 'Home', to: 'home' },
-    { label: 'About Me', to: 'education' },
-    { label: 'Skills', to: 'about' },
-    { label: 'Projects', to: 'projects' },
-    { label: 'Contact', to: 'contact' },
+     { label: 'Home', to: 'home' },
+     { label: 'About Me', to: 'about' },
+     { label: 'Experience', to: 'experience' },
+     { label: 'Projects', to: 'projects' },
   ];
 
   const drawer = (
@@ -48,26 +47,7 @@ function Navbar() {
             </ScrollLink>
           </ListItem>
         ))}
-        {/* My Resume Button inside Drawer */}
-        <Box textAlign="center" mt={2}>
-          <Button 
-            href="/Yuvraj_Bains_Resume2025.pdf" 
-            download="Yuvraj_Bains_Resume2025.pdf"
-            sx={{
-              color: '#00ffd1',
-              border: '2px solid #00ffd1',
-              borderRadius: '20px',
-              px: 3,
-              '&:hover': {
-                backgroundColor: '#00ffd1',
-                color: '#0a0a0a',
-                boxShadow: '0 0 10px #00ffd1, 0 0 20px #00ffd1',
-              },
-            }}
-          >
-            My Resume
-          </Button>
-        </Box>
+        {/* Resume removed */}
       </List>
     </Box>
   );
@@ -98,26 +78,7 @@ function Navbar() {
                 </Button>
               </ScrollLink>
             ))}
-            <Button 
-              href="/Yuvraj_Bains_Resume2025.pdf" 
-              download="Yuvraj_Bains_Resume2025.pdf"
-              sx={{
-                color: '#00d4ff',
-                border: '2px solid #00d4ff',
-                borderRadius: '20px',
-                px: 3,
-                fontFamily: 'JetBrains Mono, monospace',
-                fontWeight: 600,
-                boxShadow: '0 0 8px #00d4ff',
-                '&:hover': {
-                  backgroundColor: '#00d4ff',
-                  color: '#0a0a0a',
-                  boxShadow: '0 0 16px #00d4ff',
-                },
-              }}
-            >
-              My Resume
-            </Button>
+            {/* Resume button removed */}
           </Box>
           {/* Mobile Hamburger Menu */}
           <IconButton

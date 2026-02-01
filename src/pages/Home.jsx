@@ -1,4 +1,5 @@
 import { Typography, Box, Button, Container } from '@mui/material';
+import SocialLinks from '../components/SocialLinks';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -111,72 +112,19 @@ function Home() {
             sx={{
               fontFamily: 'Inter, Poppins, sans-serif',
               fontWeight: 400,
-              fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.6rem', lg: '1.8rem' }, // Larger text
+              fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.6rem', lg: '1.8rem' },
               color: '#a0a0a0',
-              mb: 5, // More margin
+              mb: 5,
               textShadow: '0 0 8px #00d4ff',
-              maxWidth: '800px', // Limit line length for readability
+              maxWidth: '800px',
               mx: 'auto',
               lineHeight: 1.4,
             }}
           >
-            I build fast, scalable, and awesome web applications.<br />
-            Let's create something amazing together.
+            @ Carleton University
           </Typography>
-          <Box sx={{ 
-            display: 'flex', 
-            gap: 4, // Increased gap
-            justifyContent: 'center', 
-            mb: 6, 
-            flexWrap: 'wrap' 
-          }}>
-            <Button
-              variant="contained"
-              sx={{
-                background: 'linear-gradient(90deg, #00d4ff 0%, #8b5cf6 100%)',
-                color: '#fff',
-                fontWeight: 600,
-                fontSize: '1.2rem', // Larger buttons
-                px: 5,
-                py: 2,
-                borderRadius: '12px', // More rounded
-                boxShadow: '0 0 24px #00d4ff',
-                transition: 'box-shadow 0.3s, transform 0.3s',
-                minWidth: '160px', // Ensure minimum width
-                '&:hover': {
-                  boxShadow: '0 0 40px #00d4ff',
-                  transform: 'scale(1.05)',
-                  background: 'linear-gradient(90deg, #8b5cf6 0%, #00d4ff 100%)',
-                },
-              }}
-              href="#projects"
-            >
-              View My Work
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                border: '2px solid #00d4ff',
-                color: '#00d4ff',
-                fontWeight: 600,
-                fontSize: '1.2rem', // Larger buttons
-                px: 5,
-                py: 2,
-                borderRadius: '12px', // More rounded
-                boxShadow: '0 0 24px #00d4ff',
-                transition: 'box-shadow 0.3s, transform 0.3s',
-                minWidth: '160px', // Ensure minimum width
-                '&:hover': {
-                  boxShadow: '0 0 40px #00d4ff',
-                  transform: 'scale(1.05)',
-                  background: 'rgba(0,212,255,0.08)',
-                },
-              }}
-              href="#contact"
-            >
-              Contact Me
-            </Button>
-          </Box>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }} />
+          <SocialLinks />
         </motion.div>
       </Container>
     </Box>

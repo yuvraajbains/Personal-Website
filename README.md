@@ -18,11 +18,11 @@ The site is a lightweight, front-end portfolio intended to present projects and 
 - Responsive project showcase with interactive cards and GitHub links
 - Animated section titles and subtle UI transitions
 - Simple, componentized structure for easy content updates
-- Resume download available in `public/`
+<!-- Resume removed from repository -->
 
 ## Contact
 
-Use the site's Contact page or view my GitHub profile: https://github.com/yuvraajbains
+View my GitHub profile: https://github.com/yuvraajbains
 
 ---
 

@@ -1,4 +1,4 @@
-import { Container, Typography, Chip, Box } from '@mui/material';
+import { Container, Typography, Chip, Box, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 // Typing animation for section titles
@@ -7,130 +7,51 @@ function TypingTitle({ text, color }) {
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
-      setDisplayed(text.slice(0, i+1));
+      setDisplayed(text.slice(0, i + 1));
       i++;
       if (i > text.length) clearInterval(interval);
-    }, 60);
+    }, 40);
     return () => clearInterval(interval);
   }, [text]);
-  return <span style={{ color, textShadow: `0 0 16px ${color}` }}>{displayed}<span style={{ color, fontWeight: 'bold' }}>|</span></span>;
+  return (
+    <span style={{ color, textShadow: `0 0 12px ${color}` }}>
+      {displayed}
+      <span style={{ color, fontWeight: 'bold' }}>|</span>
+    </span>
+  );
 }
 
 const skillGroups = [
   {
     title: 'Programming Languages',
-    color: '#00ffd1',
     accent: '#00ffd1',
-    skills: [
-      'Java', 'Python', 'C', 'JavaScript', 'TypeScript', 'SQL', 'HTML/CSS'
-    ],
+    skills: ['Java', 'JavaScript', 'Python', 'C/C++', 'Golang', 'TypeScript', 'SQL', 'HTML/CSS', 'Bash'],
   },
   {
-    title: 'Frameworks',
-    color: '#ff0055',
+    title: 'Frameworks & Libraries',
     accent: '#ff0055',
-    skills: [
-      'React.js', 'Node.js', 'Express.js', 'Spring Boot', 'Flask', 'FastAPI', 'ExpoGO'
-    ],
+    skills: ['React.js', 'Spring Boot', 'Node.js', 'Express.js', 'Flask', 'FastAPI', 'React Native', 'LangChain', 'JUnit'],
   },
   {
-    title: 'Databases & Platforms',
-    color: '#8b5cf6',
+    title: 'Databases & Cloud',
     accent: '#8b5cf6',
-    skills: [
-      'PostgreSQL', 'MongoDB', 'Supabase', 'AWS (Lambda, DynamoDB)', 'Google Cloud', 'Docker', 'Twilio'
-    ],
+    skills: ['Docker', 'Kubernetes', 'PostgreSQL', 'MongoDB', 'AWS', 'GCP', 'DynamoDB'],
   },
   {
-    title: 'Libraries & AI/ML',
-    color: '#00d4ff',
+    title: 'Libraries & Analytics',
     accent: '#00d4ff',
-    skills: [
-      'Pandas', 'NumPy', 'Matplotlib', 'TensorFlow', 'OpenCV', 'YOLOv8', 'LLMs', 'Prompt Engineering'
-    ],
+    skills: ['Pandas', 'NumPy', 'SciPy', 'Matplotlib', 'PyTorch', 'TensorFlow', 'OpenCV', 'YOLOv8', 'Pydantic'],
   },
   {
     title: 'Developer Tools',
-    color: '#ff0055',
-    accent: '#ff0055',
-    skills: [
-      'Git', 'GitHub Actions', 'Power BI', 'Agile', 'REST APIs', 'VS Code', 'Postman', 'Lucidchart'
-    ],
+    accent: '#ff8a65',
+    skills: ['Git', 'Linux', 'GitHub Actions', 'GitLab CI/CD', 'REST APIs', 'Jira', 'Agile', 'Postman'],
   },
 ];
 
 const certifications = [
-  {
-    name: 'AWS Certified Cloud Practitioner',
-    issuer: 'Amazon Web Services (AWS)',
-    date: 'Issued Jun. 2025',
-    id: '2837cbf8891f4378b95b6b2a7e11ce35',
-  },
-  {
-    name: 'Google Cybersecurity Professional Certificate',
-    issuer: 'Google',
-    date: 'Issued May 2025',
-    id: 'Xl9K1F19VJPK',
-  },
+  { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services (AWS)', date: 'Jun 2025' },
 ];
-      <Container maxWidth="md" sx={{ zIndex: 2, pt: 6, pb: 6 }}>
-        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', mt: 0, mb: 6 }}>
-          <Typography
-            variant="h2"
-            sx={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontWeight: 700,
-              fontSize: { xs: '2rem', md: '2.5rem' },
-              color: '#00ffd1',
-              textShadow: '0 0 16px #00ffd1',
-              letterSpacing: 2,
-              textAlign: 'center',
-            }}
-          >
-            <TypingTitle text="Technical Skills & Certifications" color="#00ffd1" />
-          </Typography>
-        </Box>
-        <Box sx={{ width: '100%', display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center', mb: 6 }}>
-          {skillGroups.map((group, idx) => (
-            <Box key={group.title} sx={{
-              background: 'rgba(10,10,20,0.85)',
-              borderRadius: '18px',
-              boxShadow: `0 0 32px ${group.accent}88`,
-              border: `2.5px solid ${group.accent}`,
-              p: 2.5,
-              minWidth: '220px',
-              maxWidth: '340px',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              mb: 2,
-              transition: 'box-shadow 0.3s, transform 0.3s',
-              '&:hover': {
-                boxShadow: `0 0 64px ${group.accent}`,
-                transform: 'scale(1.05)',
-              },
-            }}>
-              <Typography variant="h6" sx={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 700, color: group.accent, mb: 1, textShadow: `0 0 12px ${group.accent}` }}>{group.title}</Typography>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 1 }}>
-                {group.skills.map(skill => (
-                  <Chip key={skill} label={skill} sx={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 500, fontSize: '0.85rem', px: 1.5, py: 0.5, borderRadius: '999px', background: 'transparent', color: group.accent, boxShadow: `0 0 8px ${group.accent}44`, border: `1.5px solid ${group.accent}`, transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.08)', background: group.accent + '22', color: '#fff', boxShadow: `0 0 16px ${group.accent}` } }} />
-                ))}
-              </Box>
-            </Box>
-          ))}
-        </Box>
-        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
-          <Typography variant="h4" sx={{ color: '#8b5cf6', fontFamily: 'JetBrains Mono, monospace', fontWeight: 700, mb: 2, textShadow: '0 0 12px #8b5cf6' }}>Certifications</Typography>
-          {certifications.map(cert => (
-            <Box key={cert.name} sx={{ background: 'rgba(30,20,50,0.96)', borderRadius: '12px', boxShadow: '0 0 16px #8b5cf688', border: '2px solid #8b5cf6', p: 2, mb: 2, minWidth: '260px', maxWidth: '400px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <Typography variant="h6" sx={{ color: '#ff0055', fontFamily: 'JetBrains Mono, monospace', fontWeight: 700 }}>{cert.name}</Typography>
-              <Typography variant="body2" sx={{ color: '#b8b8d8', fontFamily: 'Inter, Poppins, JetBrains Mono, monospace', mb: 1 }}>{cert.issuer}</Typography>
-              <Typography variant="body2" sx={{ color: '#00ffd1', fontFamily: 'JetBrains Mono, monospace', mb: 1 }}>{cert.date}</Typography>
-              <Typography variant="caption" sx={{ color: '#8b5cf6', fontFamily: 'JetBrains Mono, monospace' }}>Credential ID: {cert.id}</Typography>
-            </Box>
-          ))}
-        </Box>
-      </Container>
 
 function About() {
   return (
@@ -153,89 +74,87 @@ function About() {
         boxSizing: 'border-box',
       }}
     >
-      <Container maxWidth="lg" sx={{ zIndex: 2, pt: 6, pb: 6 }}>
-        <Typography
-          variant="h2"
-          sx={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontWeight: 700,
-            fontSize: { xs: '2rem', md: '2.5rem' },
-            color: '#00d4ff',
-            mb: 6,
-            textShadow: '0 0 16px #00d4ff',
-            letterSpacing: 2,
-            textAlign: 'center',
-          }}
-        >
-          <TypingTitle text="Skills & Technologies" color="#00d4ff" />
-        </Typography>
-        {skillGroups.map((group, idx) => (
-          <Box key={group.title} sx={{ mb: 6, position: 'relative', width: '100%' }}>
-            <Box sx={{
-              width: '100%',
-              borderTop: `3px solid ${group.accent}`,
-              borderBottom: `3px solid ${group.accent}`,
-              px: { xs: 1, md: 4 },
-              py: 3,
-              background: 'rgba(10,10,20,0.85)',
-              boxShadow: `0 0 32px ${group.accent}44`,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-            }}>
-              <Typography
-                variant="h4"
-                sx={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontWeight: 700,
-                  color: group.accent,
-                  mb: 3,
-                  textShadow: `0 0 12px ${group.accent}`,
-                  letterSpacing: 2,
-                  textAlign: 'center',
-                }}
-              >
-                {group.title}
-              </Typography>
+      <Container maxWidth="lg" sx={{ zIndex: 2, pt: { xs: 8, md: 12 }, pb: { xs: 8, md: 12 } }}>
+        <Box sx={{ mb: 3 }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: 'Inter, Poppins, sans-serif',
+              fontWeight: 800,
+              fontSize: { xs: '2rem', md: '2.6rem' },
+              color: '#fff',
+              mb: 1,
+              textAlign: 'left',
+              textShadow: '0 0 16px #00d4ff',
+            }}
+          >
+            About Me
+          </Typography>
+          <Typography variant="body1" sx={{ color: '#cfcfd6', mt: 1, mb: 2, maxWidth: '1000px', lineHeight: 1.7, fontFamily: 'Inter, Poppins, sans-serif' }}>
+            I'm a third‑year Software Engineering student at Carleton University who loves building solutions to real‑world problems. I'm passionate about technology and enjoy learning broadly — whether that's a new framework or principles that improve how software is designed and shipped.
+          </Typography>
+          <Typography variant="body1" sx={{ color: '#a0a0a0', mb: 2, maxWidth: '1000px', lineHeight: 1.7, fontFamily: 'Inter, Poppins, sans-serif' }}>
+            I am currently a Software Developer Intern at Nokia, where I contribute to distributed systems and help implement AI‑enabled solutions as organisations increasingly adopt AI for more tasks.
+          </Typography>
+        </Box>
+
+        <Grid container spacing={4}>
+          {skillGroups.map((card) => (
+            <Grid item xs={12} md={6} key={card.title}>
               <Box sx={{
+                background: 'rgba(10,10,20,0.86)',
+                borderRadius: 3,
+                p: 3,
+                height: 240,
+                boxShadow: `0 8px 30px ${card.accent}22`,
+                border: `1px solid ${card.accent}33`,
                 display: 'flex',
-                flexWrap: 'wrap',
-                gap: 2,
-                justifyContent: 'center',
-                width: '100%',
-                maxWidth: '1400px',
+                flexDirection: 'column',
               }}>
-                {group.skills.map(skill => (
-                  <Chip
-                    key={skill}
-                    label={skill}
-                    sx={{
-                      fontFamily: 'JetBrains Mono, monospace',
-                      fontWeight: 500,
-                      fontSize: '1rem',
-                      px: 2.5,
-                      py: 1,
-                      borderRadius: '999px',
-                      background: 'transparent',
-                      color: group.accent,
-                      boxShadow: `0 0 12px ${group.accent}44`,
-                      border: `2px solid ${group.accent}`,
-                      transition: 'transform 0.2s',
-                      '&:hover': {
-                        transform: 'scale(1.08)',
-                        background: group.accent + '22',
-                        color: '#fff',
-                        boxShadow: `0 0 24px ${group.accent}`,
-                      },
-                    }}
-                  />
-                ))}
+                <Typography variant="h5" sx={{ color: card.accent, fontFamily: 'JetBrains Mono, monospace', fontWeight: 700, mb: 2, textShadow: `0 0 8px ${card.accent}` }}>
+                  {card.title}
+                </Typography>
+                <Box sx={{ 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  flexWrap: 'wrap',
+                  gap: 1.5, 
+                  flex: 1,
+                  maxHeight: 160,
+                  alignContent: 'flex-start'
+                }}>
+                  {card.skills.map((s) => (
+                    <Chip
+                      key={s}
+                      label={s}
+                      sx={{
+                        borderRadius: 3,
+                        px: 1.8,
+                        py: 0.6,
+                        background: 'transparent',
+                        color: '#e6e6e9',
+                        border: `1px solid ${card.accent}33`,
+                        boxShadow: `inset 0 0 6px ${card.accent}11`,
+                      }}
+                    />
+                  ))}
+                </Box>
               </Box>
-            </Box>
+            </Grid>
+          ))}
+        </Grid>
+
+        <Box sx={{ mt: 6, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 2 }}>
+          <Typography variant="h4" sx={{ color: '#8b5cf6', fontFamily: 'JetBrains Mono, monospace', fontWeight: 700 }}>Professional Certifications</Typography>
+          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+            {certifications.map((c) => (
+              <Box key={c.name} sx={{ background: 'rgba(30,20,50,0.96)', borderRadius: 2, p: 2, border: '1px solid #8b5cf622' }}>
+                <Typography variant="subtitle1" sx={{ color: '#ffbf80', fontWeight: 700 }}>{c.name}</Typography>
+                <Typography variant="body2" sx={{ color: '#cfcfd6' }}>{c.issuer} • {c.date}</Typography>
+              </Box>
+            ))}
           </Box>
-        ))}
+        </Box>
       </Container>
     </Box>
   );

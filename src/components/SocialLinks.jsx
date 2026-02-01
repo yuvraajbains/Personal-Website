@@ -1,121 +1,45 @@
-import { Box, IconButton } from '@mui/material';
+import { Box } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LanguageIcon from '@mui/icons-material/Language'; // Using LanguageIcon for Devpost
-import { useState, useEffect } from 'react';
 
 function SocialLinks() {
-
-  const [activeSection, setActiveSection] = useState('home');
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Section color map
-  const sectionColors = {
-    home: '#00ffd1', // teal
-    education: '#ff0055', // hot pink (About Me)
-    about: '#00d4ff', // cyan for Skills
-    projects: '#8b5cf6', // purple
-    contact: '#ff0055', // pink for Contact
-  };
-
-  // Detect active section based on scroll position
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    const vh = window.innerHeight;
-    if (scrollY < vh * 0.8) {
-      setActiveSection('home');
-    } else if (scrollY < vh * 1.8) {
-      setActiveSection('education');
-    } else if (scrollY < vh * 2.8) {
-      setActiveSection('about');
-    } else if (scrollY < vh * 3.8) {
-      setActiveSection('projects');
-    } else {
-      setActiveSection('contact');
-    }
-  };
-
-  const handleResize = () => {
-    if (window.innerWidth <= 1200) { // 🔥 Switch layout at 1200px instead of 900px
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
-    handleResize(); // run once at start
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const links = [
+    { label: 'GitHub', href: 'https://github.com/yuvraajbains', icon: <GitHubIcon sx={{ color: '#00ffd1' }} /> , color: '#00ffd1'},
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/yuvrajbains00/', icon: <LinkedInIcon sx={{ color: '#00d4ff' }} />, color: '#00d4ff' },
+    { label: 'Devpost', href: 'https://devpost.com/yuvraajbains', icon: <img src="https://devpost.com/favicon.ico" alt="Devpost" style={{ width: 20, height: 20, display: 'block' }} />, color: '#8b5cf6' },
+  ];
 
   return (
-    <Box
-      sx={{
-        position: isMobile ? 'absolute' : 'fixed',
-        top: isMobile ? 'auto' : '35%',
-        bottom: isMobile ? '20px' : 'auto',
-        left: isMobile ? '50%' : '20px',
-        transform: isMobile ? 'translateX(-50%)' : 'none',
-        display: 'flex',
-        flexDirection: isMobile ? 'row' : 'column',
-        alignItems: 'center',
-        gap: 2,
-        zIndex: 10,
-      }}
-    >
-      <IconButton 
-        href="https://github.com/yuvraajbains" 
-        target="_blank" 
-        sx={{ 
-          color: sectionColors[activeSection],
-          transition: 'color 0.5s',
-          textShadow: `0 0 16px ${sectionColors[activeSection]}`,
-        }}
-      >
-        <GitHubIcon fontSize="large" />
-      </IconButton>
-
-      <IconButton 
-        href="https://www.linkedin.com/in/yuvrajbains00/" 
-        target="_blank" 
-        sx={{ 
-          color: sectionColors[activeSection],
-          transition: 'color 0.5s',
-          textShadow: `0 0 16px ${sectionColors[activeSection]}`,
-        }}
-      >
-        <LinkedInIcon fontSize="large" />
-      </IconButton>
-
-      <IconButton 
-        href="https://www.instagram.com/yuviibains_/" 
-        target="_blank" 
-        sx={{ 
-          color: sectionColors[activeSection],
-          transition: 'color 0.5s',
-          textShadow: `0 0 16px ${sectionColors[activeSection]}`,
-        }}
-      >
-        <InstagramIcon fontSize="large" />
-      </IconButton>
-
-      <IconButton
-        href="https://devpost.com/yuvraajbains"
-        target="_blank"
-        sx={{
-          color: sectionColors[activeSection],
-          transition: 'color 0.5s',
-          textShadow: `0 0 16px ${sectionColors[activeSection]}`,
-        }}
-      >
-        <LanguageIcon fontSize="large" />
-      </IconButton>
+    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 3, flexWrap: 'wrap' }}>
+      {links.map(link => (
+        <Box
+          key={link.label}
+          component="a"
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1,
+            px: 2,
+            py: 1,
+            borderRadius: 2,
+            border: `1px solid ${link.color}33`,
+            background: 'rgba(10,10,20,0.6)',
+            boxShadow: `0 6px 18px ${link.color}22`,
+            textDecoration: 'none',
+            color: '#e6e6e9',
+            fontFamily: 'JetBrains Mono, monospace',
+            fontWeight: 600,
+            transition: 'transform 0.15s, box-shadow 0.15s',
+            '&:hover': { transform: 'translateY(-4px)', boxShadow: `0 10px 28px ${link.color}44` },
+          }}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{link.icon}</Box>
+          <Box component="span" sx={{ fontSize: '0.9rem', color: link.color }}>{link.label}</Box>
+        </Box>
+      ))}
     </Box>
   );
 }
