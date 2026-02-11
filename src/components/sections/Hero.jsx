@@ -26,7 +26,7 @@ const Hero = () => {
                 {/* Terminal Header */}
                 <div className="flex items-center justify-center space-x-2 text-green-400 font-mono text-sm md:text-base mb-4 animate-fade-in-down">
                     <Terminal size={16} />
-                    <span>guest@portfolio:~$ cat intro.txt</span>
+                    <span>yuvrajbains@portfolio:~$ cat intro.txt</span>
                 </div>
 
                 {/* Main Heading */}
