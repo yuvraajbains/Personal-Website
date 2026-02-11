@@ -45,17 +45,23 @@ const Hero = () => {
 
                 {/* Links */}
                 <div className="flex items-center justify-center space-x-4 mt-8">
-                    <Button variant="outline" className="gap-2 border-green-500/20 hover:bg-green-500/10 hover:text-green-400 text-muted-foreground font-mono">
-                        <Github size={16} />
-                        GitHub
+                    <Button variant="outline" className="gap-2 border-green-500/20 hover:bg-green-500/10 hover:text-green-400 text-muted-foreground font-mono" asChild>
+                        <a href="https://github.com/yuvraajbains" target="_blank" rel="noopener noreferrer">
+                            <Github size={16} />
+                            GitHub
+                        </a>
                     </Button>
-                    <Button variant="outline" className="gap-2 border-blue-500/20 hover:bg-blue-500/10 hover:text-blue-400 text-muted-foreground font-mono">
-                        <Linkedin size={16} />
-                        LinkedIn
+                    <Button variant="outline" className="gap-2 border-blue-500/20 hover:bg-blue-500/10 hover:text-blue-400 text-muted-foreground font-mono" asChild>
+                        <a href="https://www.linkedin.com/in/yuvrajbains00/" target="_blank" rel="noopener noreferrer">
+                            <Linkedin size={16} />
+                            LinkedIn
+                        </a>
                     </Button>
-                    <Button variant="outline" className="gap-2 border-pink-500/20 hover:bg-pink-500/10 hover:text-pink-400 text-muted-foreground font-mono">
-                        <ExternalLink size={16} />
-                        Devpost
+                    <Button variant="outline" className="gap-2 border-pink-500/20 hover:bg-pink-500/10 hover:text-pink-400 text-muted-foreground font-mono" asChild>
+                        <a href="https://devpost.com/yuvraajbains" target="_blank" rel="noopener noreferrer">
+                            <ExternalLink size={16} />
+                            Devpost
+                        </a>
                     </Button>
                 </div>
             </div>
