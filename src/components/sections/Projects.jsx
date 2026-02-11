@@ -8,7 +8,7 @@ const Projects = () => {
             title: "Nexttern",
             filename: "nexttern.tsx",
             description: "All-In-One Internship platform for finding and managing your internship search with AI-powered features.",
-            tech: ["Java", "React", "AWS", "Supabase", "Spring Boot", "Gemini AI"],
+            tech: ["Java", "React", "AWS (Lambda, ApiGateway, S3, DynamoDB, SQS, EKS)", "Supabase", "Spring Boot", "Gemini API", "REST API's", "Docker"],
             color: "green",
             github: "https://github.com/yuvraajbains/Nexttern",
             external: "https://devpost.com/software/nexttern"
@@ -17,11 +17,7 @@ const Projects = () => {
             title: "Unisync",
             filename: "unisync.tsx",
             description: "A collaborative platform for university students to sync schedules and find common free time for group projects.",
-            tech: ["React Native", "Supabase", "Python", "OpenCV", "YOLOv8", "AI/ML"], // Keeping tech stack similar or updating if provided? User didn't specify tech, I'll assume it's the one from previous turn or generic. Actually RoadWise tech was different. I'll keep Roadwise tech for now or better, I will infer from standard or just leave common ones.
-            // Wait, Roadwise tech was ["React Native", "Supabase", "Python", "OpenCV", "YOLOv8", "AI/ML"]. Unisync might be different. 
-            // The provided link is https://devpost.com/software/unisync-jnaety. I can't read it.
-            // I'll keep the tech stack vaguely similar but maybe remove specific CV stuff if it's not relevant. actually I'll just keep the structure and let the user correct if wrong, or just leave "React Native" etc.
-            // Let's safe bet: React Native, Supabase are common.
+            tech: ["React", "Typescript", "Vite", "Gemini API", "ElevenLabs API", "REST API's", "Python", "GCP", "express.js", "node.js"],
             color: "red",
             github: "https://github.com/aditinahar2005/Unisync",
             external: "https://devpost.com/software/unisync-jnaety"
@@ -30,7 +26,7 @@ const Projects = () => {
             title: "NHL Goal Alert System",
             filename: "nhl-goal-alert-system.tsx",
             description: "Fully automated Python app tracking Edmonton Oilers goals live with instant SMS alerts via Twilio, runs 24/7 in cloud.",
-            tech: ["Python", "Twilio", "Railway"],
+            tech: ["Python", "Twilio", "AWS (Lambda)", "FastAPI", "PostgresSQL", "TensorFlow", "SciKit-learn", "ML Pipeline"],
             color: "blue",
             github: "https://github.com/yuvraajbains/NHL-Goal-Alert-System",
             external: null
@@ -39,7 +35,7 @@ const Projects = () => {
             title: "FantasyML",
             filename: "fantasyml.tsx",
             description: "Full-stack ML pipeline training LightGBM ensembles for fantasy football projections with FastAPI backend and React frontend.",
-            tech: ["Python", "FastAPI", "LightGBM", "React", "TypeScript", "Docker", "Postgres"],
+            tech: ["Python", "FastAPI", "Machine Learning", "React", "Typescript"],
             color: "purple",
             github: "https://github.com/yuvraajbains/NFL-Fantasy-MLPred",
             external: null
