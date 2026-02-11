@@ -1,114 +1,35 @@
-import { AppBar, Toolbar, Button, Typography, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Link as ScrollLink } from 'react-scroll';
-import { useState } from 'react';
+import React from 'react';
+import { Button } from "./ui/button";
 
-function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+const Navbar = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
-
-  const closeDrawerAndScroll = (to) => {
-    setMobileOpen(false);
-    document.getElementById(to)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const navItems = [
-     { label: 'Home', to: 'home' },
-     { label: 'About Me', to: 'about' },
-     { label: 'Experience', to: 'experience' },
-     { label: 'Projects', to: 'projects' },
-  ];
-
-  const drawer = (
-    <Box
-      sx={{
-        width: 250,
-        backgroundColor: '#0a0a0a',
-        height: '100%',
-        color: '#00ffd1',
-        paddingTop: 5,
-      }}
-    >
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item.label} button>
-            <ScrollLink 
-              to={item.to}
-              smooth
-              duration={500}
-              offset={-70}
-              onClick={handleDrawerToggle} // 🛠 Real Fix: Close after scroll trigger
-              style={{ textDecoration: 'none', color: '#00ffd1', width: '100%' }}
-            >
-              <ListItemText primary={item.label} />
-            </ScrollLink>
-          </ListItem>
-        ))}
-        {/* Resume removed */}
-      </List>
-    </Box>
-  );
 
   return (
-    <>
-      <AppBar position="fixed" sx={{ background: 'linear-gradient(90deg, #0a0a0f 0%, #1a1a2e 100%)', boxShadow: '0 0 24px #8b5cf6', py: 1, borderBottom: '2.5px solid #8b5cf6' }}>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          {/* Left Side - Name, clickable to home */}
-          <Box sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <Typography variant="h6" sx={{ color: '#8b5cf6', fontWeight: 'bold', fontFamily: 'JetBrains Mono, monospace', textShadow: '0 0 8px #8b5cf6', fontSize: '1.4rem' }}>
-              Yuvraj Bains
-            </Typography>
-          </Box>
-          {/* Desktop Menu */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4, alignItems: 'center' }}>
-            {navItems.map((item) => (
-              <ScrollLink 
-                key={item.label}
-                to={item.to}
-                smooth
-                duration={500}
-                offset={-70}
-                style={{ textDecoration: 'none' }}
-              >
-                <Button sx={{ color: '#8b5cf6', fontFamily: 'JetBrains Mono, monospace', fontWeight: 600, '&:hover': { color: '#00d4ff', textShadow: '0 0 8px #00d4ff' } }}>
-                  {item.label}
-                </Button>
-              </ScrollLink>
-            ))}
-            {/* Resume button removed */}
-          </Box>
-          {/* Mobile Hamburger Menu */}
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerToggle}
-            sx={{ display: { md: 'none' }, color: '#8b5cf6' }}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      {/* Mobile Drawer */}
-      <Drawer
-        anchor="right"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{
-          keepMounted: true,
-        }}
-        PaperProps={{
-          sx: { background: 'linear-gradient(90deg, #0a0a0f 0%, #1a1a2e 100%)', color: '#8b5cf6', boxShadow: '0 0 24px #8b5cf6' },
-        }}
-      >
-        {drawer}
-      </Drawer>
-    </>
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 bg-black/50 backdrop-blur-md border-b border-green-900/30">
+      <div className="text-xl font-bold font-mono text-green-500 animate-pulse drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]">
+        &gt;_ yuvraj.dev
+      </div>
+      <div className="hidden md:flex items-center space-x-6">
+        <Button variant="ghost" onClick={() => scrollToSection('home')} className="text-muted-foreground hover:text-primary font-mono hover:bg-transparent">
+          &gt; Home
+        </Button>
+        <Button variant="ghost" onClick={() => scrollToSection('about')} className="text-muted-foreground hover:text-primary font-mono hover:bg-transparent">
+          &gt; About
+        </Button>
+        <Button variant="ghost" onClick={() => scrollToSection('experience')} className="text-muted-foreground hover:text-primary font-mono hover:bg-transparent">
+          &gt; Experience
+        </Button>
+        <Button variant="ghost" onClick={() => scrollToSection('projects')} className="text-muted-foreground hover:text-primary font-mono hover:bg-transparent">
+          &gt; Projects
+        </Button>
+      </div>
+    </nav>
   );
-}
+};
 
 export default Navbar;
-

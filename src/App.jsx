@@ -1,41 +1,27 @@
-import BodyBackgroundChanger from './BodyBackgroundChanger';
-import Home from './Home';
-import Projects from './Projects';
-import Experience from './pages/Experience';
-import About from './About';
-import Footer from './Footer';
-
-import { Box } from '@mui/material';
+import React from 'react';
+import Navbar from './components/Navbar';
+import MatrixBackground from './components/MatrixBackground';
+import Hero from './components/sections/Hero';
+import About from './components/sections/About';
+import Experience from './components/sections/Experience';
+import Projects from './components/sections/Projects';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <Box
-      sx={{
-        width: '100%',
-        minHeight: '100vh',
-        margin: 0,
-        padding: 0,
-        overflowX: 'hidden',
-      }}
-    >
-      <BodyBackgroundChanger />
-      <section id="home" style={{ minHeight: '100vh', width: '100%', paddingTop: 0, paddingBottom: '7rem' }}>
-        <Home />
-      </section>
-      <section id="about" style={{ minHeight: '100vh', width: '100%', paddingTop: '4rem', paddingBottom: '4rem' }}>
+    <div className="min-h-screen text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
+      <MatrixBackground />
+      <Navbar />
+
+      <main className="container mx-auto px-4 z-10 relative space-y-24 pb-20">
+        <Hero />
         <About />
-      </section>
-      <section id="experience" style={{ minHeight: '100vh', width: '100%', paddingTop: '4rem', paddingBottom: '4rem' }}>
         <Experience />
-      </section>
-      <section id="projects" style={{ minHeight: '100vh', width: '100%', paddingTop: '4rem', paddingBottom: '4rem' }}>
         <Projects />
-      </section>
-      {/* Contact section removed */}
-      <section id="footer" style={{ minHeight: '100vh', width: '100%', paddingTop: '4rem', paddingBottom: 0 }}>
-        <Footer />
-      </section>
-    </Box>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 
