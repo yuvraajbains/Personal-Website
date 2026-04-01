@@ -35,7 +35,7 @@ const Experience = () => {
                             </div>
 
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {["Python", "Kubernetes", "LangGraph", "Azure AI Foundry", "SSE Streams", "RAG"].map(tech => (
+                                {["Python", "Kubernetes", "Multi-Agent Systems", "LangGraph", "Azure", "RAG"].map(tech => (
                                     <span key={tech} className="px-2 py-1 text-xs font-mono rounded bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
                                         {tech}
                                     </span>
@@ -65,7 +65,7 @@ const Experience = () => {
                             </div>
 
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {["Deep Learning", "LLMs", "Transformers", "Agentic Apps"].map(tech => (
+                                {["Prompt Engineering", "Deep Learning", "LLMs", "Transformers", "AI Agents"].map(tech => (
                                     <span key={tech} className="px-2 py-1 text-xs font-mono rounded bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
                                         {tech}
                                     </span>
@@ -73,7 +73,7 @@ const Experience = () => {
                             </div>
 
                             <ul className="space-y-3 text-muted-foreground list-disc list-inside text-sm leading-relaxed font-mono">
-                                <li>Designed and delivered technical workshops on Deep Learning, LLMs, Agentic Applications, and Computer Vision to over 500 students.</li>
+                                <li>Designed and delivered technical workshops on Prompt Engineering, Deep Learning, LLMs, Transformers, and AI Agents to over 500 students.</li>
                                 <li>Directed a university-wide AI hackathon with over 150 participants, securing $2,000+ in funding and industry sponsorships.</li>
                             </ul>
                         </div>
