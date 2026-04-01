@@ -5,10 +5,19 @@ import { Folder, Github, ExternalLink } from "lucide-react";
 const Projects = () => {
     const projects = [
         {
-            title: "Nexttern",
-            filename: "nexttern.tsx",
-            description: "All-In-One Internship platform for finding and managing your internship search with AI-powered features.",
-            tech: ["Java", "React", "AWS (Lambda, ApiGateway, S3, DynamoDB, SQS, EKS)", "Supabase", "Spring Boot", "Gemini API", "REST API's", "Docker"],
+            title: "Aura-Grid",
+            filename: "aura-grid.py",
+            description: "Distributed, horizontally scalable, Event-Driven Agentic Fraud Detection platform implementing an Asynchronous Saga Pattern. Orchestrates a Multi-Agent Swarm (LangGraph) and local LLMs (Llama 3.2) with binary contract enforcement via Protobufs.",
+            tech: ["Ruby on Rails 8", "Python 3.12", "LangGraph", "Ollama", "Redpanda (Kafka)", "Redis", "PostgreSQL", "Protobufs", "Docker"],
+            color: "purple",
+            github: "https://github.com/yuvraajbains/Aura-Mesh",
+            external: null
+        },
+        {
+            title: "Nexttern (Distributed Internship Platform)",
+            filename: "nexttern-platform.java",
+            description: "Distributed scraping pipeline on AWS delivering 500+ fresh listings weekly to 100+ concurrent users. Architected multi-tenant isolation with PostgreSQL RLS and a RAG pipeline for personalized project roadmaps.",
+            tech: ["Java", "Spring Boot", "AWS (Lambda, DynamoDB)", "PostgreSQL RLS", "React", "HuggingFace (RAG)"],
             color: "green",
             github: "https://github.com/yuvraajbains/Nexttern",
             external: "https://devpost.com/software/nexttern"
@@ -23,21 +32,21 @@ const Projects = () => {
             external: "https://devpost.com/software/unisync-jnaety"
         },
         {
-            title: "NHL Goal Alert System",
-            filename: "nhl-goal-alert-system.tsx",
-            description: "Fully automated Python app tracking Edmonton Oilers goals live with instant SMS alerts via Twilio, runs 24/7 in cloud.",
-            tech: ["Python", "Twilio", "AWS (Lambda)", "FastAPI", "PostgresSQL", "TensorFlow", "SciKit-learn", "ML Pipeline"],
-            color: "blue",
-            github: "https://github.com/yuvraajbains/NHL-Goal-Alert-System",
+            title: "FantasyML (NFL-Fantasy System)",
+            filename: "fantasyml-engine.py",
+            description: "Distributed AI/ML pipeline achieving 80% prediction accuracy using LightGBM ensembles. Processes 1,000+ player statistics with time-series cross-validation and automated hyperparameter tuning.",
+            tech: ["Python", "FastAPI", "LightGBM", "Scikit-learn", "React", "Docker"],
+            color: "purple",
+            github: "https://github.com/yuvraajbains/NFL-Fantasy-MLPred",
             external: null
         },
         {
-            title: "FantasyML",
-            filename: "fantasyml.tsx",
-            description: "Full-stack ML pipeline training LightGBM ensembles for fantasy football projections with FastAPI backend and React frontend.",
-            tech: ["Python", "FastAPI", "Machine Learning", "React", "Typescript"],
-            color: "purple",
-            github: "https://github.com/yuvraajbains/NFL-Fantasy-MLPred",
+            title: "RoadWise (AI/ML Potholes App)",
+            filename: "roadwise-cv.py",
+            description: "Real-time municipal road safety alerts with 95% detection accuracy and 50ms latency. Trained a custom CV model on 1,000+ annotated images with geospatial analytics for infrastructure planning.",
+            tech: ["React Native", "Python", "FastAPI", "OpenCV", "YOLOv8", "PostgreSQL (GIS)"],
+            color: "blue",
+            github: null,
             external: null
         }
     ];
@@ -51,7 +60,12 @@ const Projects = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {projects.map((project, index) => (
-                    <Card key={index} className="terminal-card group hover:border-border transition-all duration-300 hover:-translate-y-1">
+                    <Card key={index} className={`terminal-card group hover:border-border transition-all duration-300 hover:-translate-y-1 ${
+                        project.color === 'green' ? 'hacker-glow-green' :
+                        project.color === 'purple' ? 'hacker-glow-purple' :
+                        project.color === 'red' ? 'hacker-glow-red' :
+                        project.color === 'blue' ? 'hacker-glow-cyan' : 'hacker-glow-purple'
+                    }`}>
                         <CardHeader className="border-b border-border/50 pb-3 bg-muted/20">
                             <div className="flex gap-2 items-center">
                                 <div className="w-2 h-2 rounded-full bg-red-500/50"></div>

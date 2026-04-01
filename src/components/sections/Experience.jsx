@@ -19,13 +19,13 @@ const Experience = () => {
                 <div className="p-4 md:p-6">
                     <div className="flex flex-col gap-6">
 
-                        {/* Job Item */}
+                        {/* Nokia Job Item */}
                         <div className="group relative pl-8 border-l-2 border-border hover:border-neon-cyan transition-colors">
                             <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-background border-2 border-border group-hover:border-neon-cyan group-hover:box-glow-cyan transition-all"></div>
 
                             <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                 <h3 className="text-xl font-bold text-white flex items-center gap-2 font-mono">
-                                    Software Developer Co-op/Intern
+                                    Software Developer Intern (AI/ML)
                                 </h3>
                             </div>
 
@@ -35,18 +35,46 @@ const Experience = () => {
                             </div>
 
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {["Python", "Kubernetes", "GitLab", "Docker"].map(tech => (
+                                {["Python", "Kubernetes", "LangGraph", "Azure AI Foundry", "SSE Streams", "RAG"].map(tech => (
                                     <span key={tech} className="px-2 py-1 text-xs font-mono rounded bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
                                         {tech}
                                     </span>
                                 ))}
                             </div>
 
-                            <ul className="space-y-2 text-muted-foreground list-disc list-inside text-sm leading-relaxed font-mono">
-                                <li>Reduced manual validation time by 60%+ by engineering GitLab CI/CD pipelines and Robot Framework test suites for automated regression testing</li>
-                                <li>Built a Python client-server wrapper for SSH session management, accelerating test execution cycles by 40%</li>
-                                <li>Developed AI-driven automation agents using Google ADK and Docker to streamline internal development workflows</li>
-                                <li>Orchestrated Kubernetes deployments with Infrastructure-as-Code via Python scripts for reproducible environments</li>
+                            <ul className="space-y-3 text-muted-foreground list-disc list-inside text-sm leading-relaxed font-mono">
+                                <li>Eliminated 95% of manual test creation for network infrastructure validation by designing multi-agent AI workflows with RAG, integrated directly into the CI/CD pipeline.</li>
+                                <li>Accelerated developer workflows by 70% by building a low-code AI platform with custom MCP servers on Kubernetes, handling high-volume SSE streams across three network domains.</li>
+                                <li>Shipped a fully automated agentic pipeline adopted across four network infrastructure divisions, reducing manual processing time by 90% via a multimodal LangGraph workflow.</li>
+                            </ul>
+                        </div>
+
+                        {/* Carleton AI Society Job Item */}
+                        <div className="group relative pl-8 border-l-2 border-border hover:border-neon-cyan transition-colors mt-12">
+                            <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-background border-2 border-border group-hover:border-neon-cyan group-hover:box-glow-cyan transition-all"></div>
+
+                            <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                                <h3 className="text-xl font-bold text-white flex items-center gap-2 font-mono">
+                                    VP of Academics
+                                </h3>
+                            </div>
+
+                            <div className="mb-4">
+                                <div className="text-neon-cyan font-semibold mb-1 font-mono">Carleton AI Society - Ottawa, ON</div>
+                                <div className="text-sm text-muted-foreground font-mono">Oct 2025 - Present</div>
+                            </div>
+
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {["Deep Learning", "LLMs", "Transformers", "Agentic Apps"].map(tech => (
+                                    <span key={tech} className="px-2 py-1 text-xs font-mono rounded bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <ul className="space-y-3 text-muted-foreground list-disc list-inside text-sm leading-relaxed font-mono">
+                                <li>Designed and delivered technical workshops on Deep Learning, LLMs, Agentic Applications, and Computer Vision to over 500 students.</li>
+                                <li>Directed a university-wide AI hackathon with over 150 participants, securing $2,000+ in funding and industry sponsorships.</li>
                             </ul>
                         </div>
 

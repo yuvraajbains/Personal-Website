@@ -21,6 +21,14 @@ function TypingTitle({ text, color }) {
 
 const projects = [
   {
+    title: 'Aura-Grid',
+    description: 'Distributed, horizontally scalable, Event-Driven Agentic Fraud Detection platform implementing an Asynchronous Saga Pattern. Orchestrates a Multi-Agent Swarm (LangGraph) and local LLMs (Llama 3.2) with binary contract enforcement via Protobufs.',
+    tech: [
+      'Ruby on Rails 8', 'Python 3.12', 'LangGraph', 'Ollama', 'Redpanda (Kafka)', 'Redis', 'PostgreSQL', 'Protobufs', 'Docker'
+    ],
+    github: 'https://github.com/yuvraajbains/Aura-Mesh',
+  },
+  {
     title: 'Nexttern',
     description: 'An All-In-One Internship platform that makes finding and managing your internship search very simple',
     tech: [

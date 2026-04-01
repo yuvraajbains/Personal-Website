@@ -1,8 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
-// Inline Badge component if not present, or I'll create it separately. 
-// For now, I'll assume I can make a simple span with classes.
 const SkillBadge = ({ children }) => (
     <span className="inline-flex items-center rounded-md border border-neon-cyan/20 bg-neon-cyan/5 px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-neon-cyan hover:bg-neon-cyan/10 hover:text-neon-cyan hover:border-neon-cyan/50 font-mono">
         {children}
@@ -11,11 +9,11 @@ const SkillBadge = ({ children }) => (
 
 const About = () => {
     const skills = {
-        "Programming Languages": ["Java", "JavaScript", "Python", "C/C++", "Golang", "TypeScript", "SQL", "HTML/CSS", "Bash"],
-        "Frameworks & Libraries": ["React.js", "Spring Boot", "Node.js", "Express.js", "Flask", "FastAPI", "React Native", "LangChain", "JUnit"],
-        "Databases & Cloud": ["Docker", "Kubernetes", "PostgreSQL", "MongoDB", "AWS", "GCP", "DynamoDB"],
-        "Libraries & Analytics": ["Pandas", "NumPy", "SciPy", "Matplotlib", "PyTorch", "TensorFlow", "OpenCV", "YOLOv8", "Pydantic"],
-        "Developer Tools": ["Git", "Linux", "GitHub Actions", "GitLab CI/CD", "REST APIs", "Jira", "Agile", "Postman"]
+        "Languages": ["Java", "Python", "JavaScript/TypeScript", "Ruby", "C/C++", "Golang", "SQL", "HTML/CSS", "Bash"],
+        "Frameworks": ["Spring Boot", "React.js", "Node.js", "Express.js", "FastAPI", "Flask", "React Native", "LangChain", "LangGraph"],
+        "Systems & Cloud": ["Kubernetes", "Docker", "AWS", "GCP", "PostgreSQL", "MongoDB", "DynamoDB"],
+        "AI/ML": ["PyTorch", "TensorFlow", "OpenCV", "YOLOv8", "Pandas", "NumPy", "Pydantic"],
+        "Tools": ["Git", "Linux", "GitLab CI/CD", "GitHub Actions", "REST APIs", "Jira", "Agile", "Postman"]
     };
 
     return (

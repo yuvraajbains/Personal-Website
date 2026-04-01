@@ -15,7 +15,7 @@ const Hero = () => {
             } else {
                 clearInterval(typingInterval);
             }
-        }, 100); // Adjust typing speed here (lower is faster)
+        }, 100);
 
         return () => clearInterval(typingInterval);
     }, []);
@@ -66,10 +66,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Scroll indicator */}
-            <div className="absolute bottom-10 animate-bounce">
-                <div className="w-1 h-12 rounded-full bg-gradient-to-b from-green-500/0 via-green-500/50 to-green-500/0"></div>
-            </div>
+            {/* Hero content ends here */}
         </section>
     );
 };
