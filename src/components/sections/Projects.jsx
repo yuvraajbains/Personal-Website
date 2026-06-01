@@ -5,10 +5,19 @@ import { Folder, Github, ExternalLink } from "lucide-react";
 const Projects = () => {
     const projects = [
         {
+            title: "Resonance",
+            filename: "resonance-engine.py",
+            description: "Reduced recommendation latency to under 15ms by decoupling a PyTorch SASRec Transformer from a Ruby on Rails monolith into a dedicated FastAPI microservice, eliminating Ruby GIL contention. Compressed semantic embeddings by 83% (384D → 64D) for sub-millisecond FAISS retrieval.",
+            tech: ["Ruby on Rails", "Python", "PyTorch", "FastAPI", "FAISS", "SASRec"],
+            color: "blue",
+            github: "https://github.com/yuvraajbains/myResonance",
+            external: null
+        },
+        {
             title: "Aura-Grid",
             filename: "aura-grid.py",
-            description: "Distributed, horizontally scalable, Event-Driven Agentic Fraud Detection platform implementing an Asynchronous Saga Pattern. Orchestrates a Multi-Agent Swarm (LangGraph) and local LLMs (Llama 3.2) with binary contract enforcement via Protobufs.",
-            tech: ["Ruby on Rails 8", "Python 3.12", "LangGraph", "Ollama", "Redpanda (Kafka)", "Redis", "PostgreSQL", "Protobufs", "Docker"],
+            description: "Architected an event-driven fraud detection microservice using Ruby on Rails and Kafka, decoupling AI workloads via the Asynchronous Saga Pattern with sub-30ms response times. Engineered a multi-agent LangGraph swarm with localized LLaMA 3.2 inference.",
+            tech: ["Ruby on Rails", "Python", "LangGraph", "Kafka", "Redis", "PostgreSQL", "Protobufs", "Docker"],
             color: "purple",
             github: "https://github.com/yuvraajbains/Aura-Mesh",
             external: null
@@ -16,37 +25,37 @@ const Projects = () => {
         {
             title: "Nexttern (Distributed Internship Platform)",
             filename: "nexttern-platform.java",
-            description: "Distributed scraping pipeline on AWS delivering 500+ fresh listings weekly to 100+ concurrent users. Architected multi-tenant isolation with PostgreSQL RLS and a RAG pipeline for personalized project roadmaps.",
-            tech: ["Java", "Spring Boot", "AWS (Lambda, DynamoDB)", "PostgreSQL RLS", "React", "HuggingFace (RAG)"],
+            description: "Delivered 500+ fresh internship listings weekly to 100+ concurrent users by building a distributed ETL pipeline on AWS. Architected multi-tenant isolation with PostgreSQL RLS and developed a personalized project roadmap tool with RAG, vectorizing 5,000+ job postings.",
+            tech: ["Java", "Spring Boot", "React", "AWS (Lambda, DynamoDB)", "PostgreSQL RLS", "RAG", "gemini-api"],
             color: "green",
             github: "https://github.com/yuvraajbains/Nexttern",
             external: "https://devpost.com/software/nexttern"
         },
         {
-            title: "Unisync",
-            filename: "unisync.tsx",
-            description: "A collaborative platform for university students to sync schedules and find common free time for group projects.",
-            tech: ["React", "Typescript", "Vite", "Gemini API", "ElevenLabs API", "REST API's", "Python", "GCP", "express.js", "node.js"],
+            title: "RoadWise (AI/ML Potholes App)",
+            filename: "roadwise-cv.py",
+            description: "Delivered real-time municipal road safety alerts at 95% detection accuracy and 50ms latency by training a custom computer vision model on more than 1,000 annotated road images. Built analytics infrastructure with a FastAPI backend and PostgreSQL geospatial queries.",
+            tech: ["React Native", "Python", "FastAPI", "PostgreSQL", "OpenCV", "YOLOv8"],
+            color: "blue",
+            github: null,
+            external: null
+        },
+        {
+            title: "NHL Goal Alert System",
+            filename: "nhl-tracker.py",
+            description: "A fully automated Python app that tracks Edmonton Oilers goals live using the NHL public API and sends instant goal alerts via SMS using Twilio. Runs 24/7 in the cloud with real-time notifications.",
+            tech: ["Python", "Twilio", "Railway", "REST API"],
             color: "red",
-            github: "https://github.com/aditinahar2005/Unisync",
-            external: "https://devpost.com/software/unisync-jnaety"
+            github: "https://github.com/yuvraajbains/NHL-Goal-Alert-System",
+            external: null
         },
         {
             title: "FantasyML (NFL-Fantasy System)",
             filename: "fantasyml-engine.py",
-            description: "Distributed AI/ML pipeline achieving 80% prediction accuracy using LightGBM ensembles. Processes 1,000+ player statistics with time-series cross-validation and automated hyperparameter tuning.",
-            tech: ["Python", "FastAPI", "LightGBM", "Scikit-learn", "React", "Docker"],
+            description: "Full-stack ML pipeline that trains LightGBM ensembles for fantasy football projections, serves FastAPI APIs, and includes a React+TypeScript frontend. Processes player statistics with time-series cross-validation.",
+            tech: ["Python", "FastAPI", "LightGBM", "Scikit-learn", "React", "Docker", "Postgres", "Redis"],
             color: "purple",
             github: "https://github.com/yuvraajbains/NFL-Fantasy-MLPred",
-            external: null
-        },
-        {
-            title: "RoadWise (AI/ML Potholes App)",
-            filename: "roadwise-cv.py",
-            description: "Real-time municipal road safety alerts with 95% detection accuracy and 50ms latency. Trained a custom CV model on 1,000+ annotated images with geospatial analytics for infrastructure planning.",
-            tech: ["React Native", "Python", "FastAPI", "OpenCV", "YOLOv8", "PostgreSQL (GIS)"],
-            color: "blue",
-            github: null,
             external: null
         }
     ];

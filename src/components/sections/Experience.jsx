@@ -25,7 +25,7 @@ const Experience = () => {
 
                             <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
                                 <h3 className="text-xl font-bold text-white flex items-center gap-2 font-mono">
-                                    Software Developer Intern (AI/ML)
+                                    Software Development Engineer Co-op/Intern
                                 </h3>
                             </div>
 
@@ -35,7 +35,7 @@ const Experience = () => {
                             </div>
 
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {["Python", "Kubernetes", "Multi-Agent Systems", "LangGraph", "Azure", "RAG"].map(tech => (
+                                {["Python", "LangGraph", "MCP", "Kubernetes", "vLLM", "RAG", "Docker"].map(tech => (
                                     <span key={tech} className="px-2 py-1 text-xs font-mono rounded bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
                                         {tech}
                                     </span>
@@ -43,9 +43,10 @@ const Experience = () => {
                             </div>
 
                             <ul className="space-y-3 text-muted-foreground list-disc list-inside text-sm leading-relaxed font-mono">
-                                <li>Eliminated 95% of manual test creation for network infrastructure validation by designing multi-agent AI workflows with RAG, integrated directly into the CI/CD pipeline.</li>
-                                <li>Accelerated developer workflows by 70% by building a low-code AI platform with custom MCP servers on Kubernetes, handling high-volume SSE streams across three network domains.</li>
-                                <li>Shipped a fully automated agentic pipeline adopted across four network infrastructure divisions, reducing manual processing time by 90% via a multimodal LangGraph workflow.</li>
+                                <li>Eliminated 95% of manual test creation for network infrastructure validation by designing multi-agent AI workflows with retrieval-augmented generation, integrated into the CI/CD pipeline with automated testing gates.</li>
+                                <li>Accelerated developer workflows by 70% by building a low-code AI platform with custom MCP servers on Kubernetes, handling high-volume SSE streams across three network domains as dedicated microservices.</li>
+                                <li>Shipped a fully automated agentic pipeline adopted across four network infrastructure divisions, reducing manual processing time by 90%, by architecting a multimodal LangGraph workflow following agile development practices.</li>
+                                <li>Secured internal LLM usage from data leakage by deploying an auth-gated vLLM inference microservice with MCP and REST access, integrating LLM-based redaction to ensure zero sensitive data exposure.</li>
                             </ul>
                         </div>
 
