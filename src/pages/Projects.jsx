@@ -21,32 +21,44 @@ function TypingTitle({ text, color }) {
 
 const projects = [
   {
-    title: 'Aura-Grid',
-    description: 'Distributed, horizontally scalable, Event-Driven Agentic Fraud Detection platform implementing an Asynchronous Saga Pattern. Orchestrates a Multi-Agent Swarm (LangGraph) and local LLMs (Llama 3.2) with binary contract enforcement via Protobufs.',
+    title: 'Resonance',
+    subtitle: 'AI Music Discovery Platform',
+    description: 'Reduced recommendation latency to under 15ms by decoupling a PyTorch SASRec Transformer from a Ruby on Rails monolith into a dedicated FastAPI microservice, eliminating Ruby GIL contention on tensor operations. Compressed semantic embeddings by 83% (384D → 64D) for sub-millisecond FAISS retrieval via deterministic QR decomposition.',
     tech: [
-      'Ruby on Rails 8', 'Python 3.12', 'LangGraph', 'Ollama', 'Redpanda (Kafka)', 'Redis', 'PostgreSQL', 'Protobufs', 'Docker'
+      'Ruby on Rails', 'Python', 'PyTorch', 'FastAPI', 'FAISS', 'SASRec Transformer'
     ],
-    github: 'https://github.com/yuvraajbains/Aura-Mesh',
+    github: 'https://github.com/yuvraajbains/myResonance',
   },
   {
     title: 'Nexttern',
-    description: 'An All-In-One Internship platform that makes finding and managing your internship search very simple',
+    subtitle: 'Distributed Full-Stack Internship Platform',
+    description: 'Delivered 500+ fresh internship listings weekly to 100+ concurrent users via a distributed ETL microservice pipeline on AWS Lambda and DynamoDB. Architected multi-tenant data isolation with PostgreSQL RLS, and engineered a RAG pipeline vectorizing 5,000+ job postings for a personalized project roadmap tool.',
     tech: [
-      'Java', 'React', 'JavaScript', 'AWS (DynamoDB, Lambda, EventBridge, SES)', 'Supabase', 'Railway', 'Vercel', 'AI (gemini-api)', 'Spring Boot'
+      'Java', 'Spring Boot', 'React', 'AWS (Lambda, DynamoDB)', 'PostgreSQL', 'RAG', 'AI (gemini-api)'
     ],
     github: 'https://github.com/yuvraajbains/Nexttern',
     devpost: 'https://devpost.com/software/nexttern',
   },
   {
-    title: 'RoadWise',
-    description: 'AI-Powered Pothole Monitoring App for real-time pothole detection and infrastructure analytics',
+    title: 'Aura-Grid',
+    subtitle: 'Distributed Agentic Fraud Detection Platform',
+    description: 'Architected an event-driven fraud detection microservice with Ruby on Rails and Kafka, decoupling AI workloads via the Asynchronous Saga Pattern with sub-30ms response times. Engineered a multi-agent LangGraph swarm with localized LLaMA 3.2 inference delivering real-time verdicts via ActionCable WebSockets over Redis pub/sub.',
     tech: [
-      'React Native', 'Expo Go', 'TailwindCSS', 'Supabase', 'Python', 'OpenCV', 'YOLOv8', 'AI/ML', 'B2B Platform'
+      'Ruby on Rails', 'Python', 'LangGraph', 'Kafka', 'Redis', 'PostgreSQL', 'Protobufs', 'Docker'
+    ],
+    github: 'https://github.com/yuvraajbains/Aura-Mesh',
+  },
+  {
+    title: 'RoadWise',
+    subtitle: 'AI/ML Mobile Potholes Data App',
+    description: 'Delivered real-time municipal road safety alerts at 95% detection accuracy and 50ms latency by training a custom computer vision model on 1,000+ annotated road images. Built analytics infrastructure with a FastAPI backend, PostgreSQL geospatial queries, and interactive dashboards for city infrastructure planning.',
+    tech: [
+      'React Native', 'Python', 'FastAPI', 'PostgreSQL', 'OpenCV', 'YOLOv8', 'Computer Vision'
     ],
   },
   {
     title: 'NHL Goal Alert System',
-    description: 'A fully automated Python app that tracks Edmonton Oilers goals live using the NHL public API and sends instant goal alerts via SMS using Twilio. It’s designed to run 24/7 in the cloud and send real-time notifications directly to your phone every time the Oilers score.',
+    description: 'A fully automated Python app that tracks Edmonton Oilers goals live using the NHL public API and sends instant goal alerts via SMS using Twilio. Runs 24/7 in the cloud with real-time notifications directly to your phone every time the Oilers score.',
     tech: [
       'Python', 'Twilio', 'Railway'
     ],
@@ -141,6 +153,23 @@ function Projects() {
                 >
                   {project.title}
                 </Typography>
+                {project.subtitle && (
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      fontFamily: 'Inter, Poppins, sans-serif',
+                      fontWeight: 600,
+                      color: '#00d4ff',
+                      mb: 0.5,
+                      fontSize: '0.82rem',
+                      letterSpacing: 0.5,
+                      textTransform: 'uppercase',
+                      opacity: 0.85,
+                    }}
+                  >
+                    {project.subtitle}
+                  </Typography>
+                )}
                 <Typography
                   variant="subtitle2"
                   sx={{
