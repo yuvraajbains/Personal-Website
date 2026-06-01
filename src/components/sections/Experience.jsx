@@ -62,7 +62,7 @@ const Experience = () => {
 
                             <div className="mb-4">
                                 <div className="text-neon-cyan font-semibold mb-1 font-mono">Carleton AI Society - Ottawa, ON</div>
-                                <div className="text-sm text-muted-foreground font-mono">Oct 2025 - Present</div>
+                                <div className="text-sm text-muted-foreground font-mono">Oct 2025 - May 2026</div>
                             </div>
 
                             <div className="flex flex-wrap gap-2 mb-4">
