@@ -7,7 +7,7 @@ const Projects = () => {
         {
             title: "Resonance",
             filename: "resonance-engine.py",
-            description: "Reduced recommendation latency to under 15ms by decoupling a PyTorch SASRec Transformer from a Ruby on Rails monolith into a dedicated FastAPI microservice, eliminating Ruby GIL contention. Compressed semantic embeddings by 83% (384D → 64D) for sub-millisecond FAISS retrieval.",
+            description: "An AI-powered music discovery platform that delivers highly personalized song recommendations. Engineered for massive scale, providing users with instant, sub-millisecond recommendation retrievals for a seamless listening experience.",
             tech: ["Ruby on Rails", "Python", "PyTorch", "FastAPI", "FAISS", "SASRec"],
             color: "blue",
             github: "https://github.com/yuvraajbains/myResonance",
@@ -16,7 +16,7 @@ const Projects = () => {
         {
             title: "Aura-Grid",
             filename: "aura-grid.py",
-            description: "Architected an event-driven fraud detection microservice using Ruby on Rails and Kafka, decoupling AI workloads via the Asynchronous Saga Pattern with sub-30ms response times. Engineered a multi-agent LangGraph swarm with localized LLaMA 3.2 inference.",
+            description: "A real-time, event-driven fraud detection platform. Uses a swarm of localized AI agents to analyze transactions and deliver automated security verdicts in under 30 milliseconds, ensuring rapid and secure financial processing.",
             tech: ["Ruby on Rails", "Python", "LangGraph", "Kafka", "Redis", "PostgreSQL", "Protobufs", "Docker"],
             color: "purple",
             github: "https://github.com/yuvraajbains/Aura-Mesh",
@@ -25,7 +25,7 @@ const Projects = () => {
         {
             title: "Nexttern (Distributed Internship Platform)",
             filename: "nexttern-platform.java",
-            description: "Delivered 500+ fresh internship listings weekly to 100+ concurrent users by building a distributed ETL pipeline on AWS. Architected multi-tenant isolation with PostgreSQL RLS and developed a personalized project roadmap tool with RAG, vectorizing 5,000+ job postings.",
+            description: "A comprehensive hub for students to navigate their tech careers. Automates the aggregation of 500+ fresh internship listings weekly for hundreds of concurrent users, and generates personalized, AI-driven project roadmaps to boost their resumes.",
             tech: ["Java", "Spring Boot", "React", "AWS (Lambda, DynamoDB)", "PostgreSQL RLS", "RAG", "gemini-api"],
             color: "green",
             github: "https://github.com/yuvraajbains/Nexttern",
@@ -34,7 +34,7 @@ const Projects = () => {
         {
             title: "RoadWise (AI/ML Potholes App)",
             filename: "roadwise-cv.py",
-            description: "Delivered real-time municipal road safety alerts at 95% detection accuracy and 50ms latency by training a custom computer vision model on more than 1,000 annotated road images. Built analytics infrastructure with a FastAPI backend and PostgreSQL geospatial queries.",
+            description: "An intelligent mobile application that monitors road conditions to keep drivers safe. Processes live footage to detect potholes with 95% accuracy and provides cities with a detailed dashboard to efficiently plan infrastructure repairs.",
             tech: ["React Native", "Python", "FastAPI", "PostgreSQL", "OpenCV", "YOLOv8"],
             color: "blue",
             github: null,
@@ -43,7 +43,7 @@ const Projects = () => {
         {
             title: "NHL Goal Alert System",
             filename: "nhl-tracker.py",
-            description: "A fully automated Python app that tracks Edmonton Oilers goals live using the NHL public API and sends instant goal alerts via SMS using Twilio. Runs 24/7 in the cloud with real-time notifications.",
+            description: "An automated live-tracking application for Edmonton Oilers hockey games. Operates 24/7 in the cloud to send instant SMS alerts directly to fans' phones the moment a goal is scored.",
             tech: ["Python", "Twilio", "Railway", "REST API"],
             color: "red",
             github: "https://github.com/yuvraajbains/NHL-Goal-Alert-System",
@@ -52,7 +52,7 @@ const Projects = () => {
         {
             title: "FantasyML (NFL-Fantasy System)",
             filename: "fantasyml-engine.py",
-            description: "Full-stack ML pipeline that trains LightGBM ensembles for fantasy football projections, serves FastAPI APIs, and includes a React+TypeScript frontend. Processes player statistics with time-series cross-validation.",
+            description: "An advanced predictive platform for fantasy football managers. Analyzes thousands of historical player statistics to forecast game performance, empowering users to make data-driven, winning roster decisions.",
             tech: ["Python", "FastAPI", "LightGBM", "Scikit-learn", "React", "Docker", "Postgres", "Redis"],
             color: "purple",
             github: "https://github.com/yuvraajbains/NFL-Fantasy-MLPred",
