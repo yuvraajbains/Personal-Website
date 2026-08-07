@@ -1,87 +1,52 @@
 import React from 'react';
+import Reveal from '../Reveal';
+import Timeline from '../Timeline';
+
+const ROLES = [
+    {
+        title: "Software Engineer Co-op/Intern",
+        badge: "RBC",
+        logoSrc: "/logos/rbc.webp",
+        logoSlug: null,
+        org: "RBC (Royal Bank of Canada), Data & Innovation, Technology & Operations",
+        location: "Toronto, ON",
+        period: "Sept 2026 - Dec 2026",
+        status: "Incoming",
+        tech: ["LLM Orchestration", "Agentic AI", "Big Data Pipelines"],
+        bullets: [
+            "Selected to engineer agentic AI workflows to optimize enterprise big data pipelines, leveraging LLM orchestration for automated financial data validation across the Technology & Operations stack.",
+        ],
+        accent: 'spark',
+    },
+    {
+        title: "Software Engineer Co-op/Intern",
+        badge: "N",
+        logoSrc: "/logos/nokia.png",
+        logoSlug: "nokia",
+        org: "Nokia, AI Infrastructure",
+        location: "Ottawa, ON",
+        period: "Jan 2026 - Aug 2026",
+        status: null,
+        tech: ["Python", "LangGraph", "MCP", "Kubernetes", "vLLM", "Helm"],
+        bullets: [
+            "Eliminated 95% of manual test creation and reduced false-positive test generation 40% for network infrastructure validation by designing multi-agent AI workflows with dense retrieval and embedding-based reranking.",
+            "Remediated unauthorized internal LLM access and reduced GPU memory footprint 35% by deploying an auth-gated vLLM inference microservice with INT8 quantization, preserving output quality on internal evals.",
+            "Accelerated developer workflows by 70% by building a low-code AI platform with custom MCP servers on Kubernetes, handling high-volume SSE streams across three network domains as dedicated microservices.",
+            "Enabled AI workflow adoption across 500+ engineers by engineering a visual agent orchestration platform that chains LLM skills with secure code execution and dynamic Kubernetes/Helm auto-provisioning.",
+        ],
+        accent: 'signal',
+    },
+];
 
 const Experience = () => {
     return (
         <section id="experience" className="py-20 px-4 md:px-0 max-w-6xl mx-auto">
-            <div className="space-y-2 mb-10">
-                <p className="text-neon-cyan font-mono text-sm">{'// section.experience'}</p>
-                <h2 className="text-4xl font-bold text-white font-mono">Work <span className="text-neon-cyan text-glow-cyan">Experience</span></h2>
-            </div>
+            <Reveal className="space-y-2 mb-12">
+                <p className="text-spark font-mono text-sm">{'// section.experience'}</p>
+                <h2 className="font-display text-4xl font-bold text-foreground">Work <span className="text-spark text-glow-spark">Experience</span></h2>
+            </Reveal>
 
-            <div className="terminal-card p-1">
-                <div className="flex gap-2 p-3 border-b border-border/50 mb-4 bg-muted/50 rounded-t-lg">
-                    <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
-                    <span className="text-xs text-muted-foreground ml-2 font-mono">experience.log</span>
-                </div>
-
-                <div className="p-4 md:p-6">
-                    <div className="flex flex-col gap-6">
-
-                        {/* Nokia Job Item */}
-                        <div className="group relative pl-8 border-l-2 border-border hover:border-neon-cyan transition-colors">
-                            <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-background border-2 border-border group-hover:border-neon-cyan group-hover:box-glow-cyan transition-all"></div>
-
-                            <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                <h3 className="text-xl font-bold text-white flex items-center gap-2 font-mono">
-                                    Software Development Engineer Co-op/Intern
-                                </h3>
-                            </div>
-
-                            <div className="mb-4">
-                                <div className="text-neon-cyan font-semibold mb-1 font-mono">Nokia - Ottawa, ON</div>
-                                <div className="text-sm text-muted-foreground font-mono">Jan 2026 - Present</div>
-                            </div>
-
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["Python", "LangGraph", "MCP", "Kubernetes", "vLLM", "RAG", "Docker"].map(tech => (
-                                    <span key={tech} className="px-2 py-1 text-xs font-mono rounded bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-
-                            <ul className="space-y-3 text-muted-foreground list-disc list-inside text-sm leading-relaxed font-mono">
-                                <li>Eliminated 95% of manual test creation for network infrastructure validation by designing multi-agent AI workflows with retrieval-augmented generation, integrated into the CI/CD pipeline with automated testing gates.</li>
-                                <li>Accelerated developer workflows by 70% by building a low-code AI platform with custom MCP servers on Kubernetes, handling high-volume SSE streams across three network domains as dedicated microservices.</li>
-                                <li>Shipped a fully automated agentic pipeline adopted across four network infrastructure divisions, reducing manual processing time by 90%, by architecting a multimodal LangGraph workflow following agile development practices.</li>
-                                <li>Secured internal LLM usage from data leakage by deploying an auth-gated vLLM inference microservice with MCP and REST access, integrating LLM-based redaction to ensure zero sensitive data exposure.</li>
-                            </ul>
-                        </div>
-
-                        {/* Carleton AI Society Job Item */}
-                        <div className="group relative pl-8 border-l-2 border-border hover:border-neon-cyan transition-colors mt-12">
-                            <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-background border-2 border-border group-hover:border-neon-cyan group-hover:box-glow-cyan transition-all"></div>
-
-                            <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                <h3 className="text-xl font-bold text-white flex items-center gap-2 font-mono">
-                                    VP of Academics
-                                </h3>
-                            </div>
-
-                            <div className="mb-4">
-                                <div className="text-neon-cyan font-semibold mb-1 font-mono">Carleton AI Society - Ottawa, ON</div>
-                                <div className="text-sm text-muted-foreground font-mono">Oct 2025 - May 2026</div>
-                            </div>
-
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["Prompt Engineering", "Deep Learning", "LLMs", "Transformers", "AI Agents"].map(tech => (
-                                    <span key={tech} className="px-2 py-1 text-xs font-mono rounded bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-
-                            <ul className="space-y-3 text-muted-foreground list-disc list-inside text-sm leading-relaxed font-mono">
-                                <li>Designed and delivered technical workshops on Prompt Engineering, Deep Learning, LLMs, Transformers, and AI Agents to over 500 students.</li>
-                                <li>Directed a university-wide AI hackathon with over 150 participants, securing $2,000+ in funding and industry sponsorships.</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            <Timeline items={ROLES} />
         </section>
     );
 };
