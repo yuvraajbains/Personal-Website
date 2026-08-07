@@ -1,27 +1,34 @@
 import React from 'react';
+import { MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import MatrixBackground from './components/MatrixBackground';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Experience from './components/sections/Experience';
+import Leadership from './components/sections/Leadership';
 import Projects from './components/sections/Projects';
 import Footer from './components/Footer';
+import { Toaster } from './components/ui/sonner';
 
 function App() {
   return (
-    <div className="min-h-screen text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
-      <MatrixBackground />
-      <Navbar />
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen text-foreground font-sans selection:bg-signal/30 selection:text-signal">
+        <MatrixBackground />
+        <Navbar />
+        <Toaster position="bottom-right" />
 
-      <main className="container mx-auto px-4 z-10 relative space-y-24 pb-20">
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-      </main>
+        <main className="container mx-auto px-4 z-10 relative space-y-24 pb-20">
+          <Hero />
+          <About />
+          <Experience />
+          <Leadership />
+          <Projects />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </MotionConfig>
   );
 }
 
