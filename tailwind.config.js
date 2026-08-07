@@ -47,22 +47,32 @@ module.exports = {
                     DEFAULT: "hsl(var(--card))",
                     foreground: "hsl(var(--card-foreground))",
                 },
-                neon: {
-                    green: "hsl(var(--neon-green))",
-                    cyan: "hsl(var(--neon-cyan))",
-                    purple: "hsl(var(--neon-purple))",
-                    pink: "hsl(var(--neon-pink))",
-                    orange: "hsl(var(--neon-orange))",
+                surface: {
+                    2: "hsl(var(--surface-2))",
+                    3: "hsl(var(--surface-3))",
+                },
+                signal: {
+                    DEFAULT: "hsl(var(--signal))",
+                    dim: "hsl(var(--signal-dim))",
+                },
+                spark: {
+                    DEFAULT: "hsl(var(--spark))",
+                    dim: "hsl(var(--spark-dim))",
                 },
             },
             fontFamily: {
-                sans: ["Inter", "sans-serif"],
+                sans: ["IBM Plex Sans", "sans-serif"],
+                display: ["Space Grotesk", "sans-serif"],
                 mono: ["JetBrains Mono", "monospace"],
             },
             borderRadius: {
                 lg: "var(--radius)",
                 md: "calc(var(--radius) - 2px)",
                 sm: "calc(var(--radius) - 4px)",
+            },
+            transitionTimingFunction: {
+                out: "cubic-bezier(0.16, 1, 0.3, 1)",
+                in: "cubic-bezier(0.7, 0, 0.84, 0)",
             },
             keyframes: {
                 "accordion-down": {
@@ -73,10 +83,15 @@ module.exports = {
                     from: { height: "var(--radix-accordion-content-height)" },
                     to: { height: 0 },
                 },
+                "node-pulse": {
+                    "0%, 100%": { opacity: 0.5, transform: "scale(1)" },
+                    "50%": { opacity: 1, transform: "scale(1.15)" },
+                },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
+                "node-pulse": "node-pulse 2.4s ease-in-out infinite",
             },
         },
     },
