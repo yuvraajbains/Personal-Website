@@ -22,7 +22,7 @@ The site is a lightweight, front-end portfolio intended to present projects and 
 
 ## Contact
 
-View my GitHub profile: https://github.com/yuvraajbains
+View my GitHub profile: https://github.com/yuviib
 
 ---
 

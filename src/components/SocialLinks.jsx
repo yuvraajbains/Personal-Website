@@ -4,7 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 function SocialLinks() {
   const links = [
-    { label: 'GitHub', href: 'https://github.com/yuvraajbains', icon: <GitHubIcon sx={{ color: '#00ffd1' }} /> , color: '#00ffd1'},
+    { label: 'GitHub', href: 'https://github.com/yuviib', icon: <GitHubIcon sx={{ color: '#00ffd1' }} /> , color: '#00ffd1'},
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/yuvrajbains00/', icon: <LinkedInIcon sx={{ color: '#00d4ff' }} />, color: '#00d4ff' },
     { label: 'Devpost', href: 'https://devpost.com/yuvraajbains', icon: <img src="https://devpost.com/favicon.ico" alt="Devpost" style={{ width: 20, height: 20, display: 'block' }} />, color: '#8b5cf6' },
   ];
