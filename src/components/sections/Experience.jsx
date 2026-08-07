@@ -10,7 +10,7 @@ const ROLES = [
         logoSlug: null,
         org: "RBC (Royal Bank of Canada), Data & Innovation, Technology & Operations",
         location: "Toronto, ON",
-        period: "Sept 2026 - Dec 2026",
+        period: "Sept 2026 - Present",
         status: "Incoming",
         tech: ["LLM Orchestration", "Agentic AI", "Big Data Pipelines"],
         bullets: [
